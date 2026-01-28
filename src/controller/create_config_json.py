@@ -1,7 +1,8 @@
 from src.filesystem.scanner import scan_for_pst_files_full
 from src.interface.select_files import select_pst_files
+from src.infrastructure.json.config_manager import create_config
 
-def run_search_select():
+def run_create_config_json():
     print("Iniciando varredura completa de arquivos PST...")
     pst_files = scan_for_pst_files_full()
 
@@ -11,8 +12,8 @@ def run_search_select():
 
     print(f"\nEncontrados {len(pst_files)} arquivos PST:\n")
 
-    selected_files = select_pst_files(pst_files)
+    selected_files, folder_name = select_pst_files(pst_files)
 
-    print(selected_files)
+    create_config(selected_files, folder_name)
 
-    return selected_files
+    print("Configuração salva com sucesso!")
