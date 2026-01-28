@@ -1,4 +1,4 @@
-from src.filesystem.scanner import scan_for_pst_files_full, format_size
+from src.filesystem.scanner import scan_for_pst_files_full
 from src.interface.cli import select_pst_files
 
 
@@ -11,10 +11,6 @@ def main():
         return
 
     print(f"\nEncontrados {len(pst_files)} arquivos PST:\n")
-    for pst in pst_files:
-        size = pst.stat().st_size
-        print(f"{pst}")
-        print(f"  Size: {format_size(size)}\n")
 
     selected_files = select_pst_files(pst_files)
 
