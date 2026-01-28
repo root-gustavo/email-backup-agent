@@ -1,5 +1,5 @@
 from src.filesystem.scanner import scan_for_pst_files_full
-from src.interface.cli import select_pst_files
+from src.interface.select_files import select_pst_files
 
 def run_search_select():
     print("Iniciando varredura completa de arquivos PST...")
@@ -13,6 +13,6 @@ def run_search_select():
 
     selected_files = select_pst_files(pst_files)
 
-    print("\nArquivos selecionados:")
-    for file in selected_files:
-        print(file)
+    print(selected_files)
+
+    return selected_files
