@@ -1,8 +1,10 @@
 from src.filesystem.scanner import scan_for_pst_files_full
 from src.interface.select_files import select_pst_files
 from src.infrastructure.json.config_manager import create_config
+from src.filesystem.create_folder import create_all_folders
 
-def run_create_config_json():
+def run_initial_config():
+    create_all_folders()
     print("Iniciando varredura completa de arquivos PST...")
     pst_files = scan_for_pst_files_full()
 

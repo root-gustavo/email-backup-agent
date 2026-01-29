@@ -1,4 +1,5 @@
-from src.controller.create_config_json import run_create_config_json
+from src.controller.initial_config import run_initial_config
+from config.settings import DATA
 
 if __name__ == "__main__":
-    run_create_config_json()
+    run_initial_config()

@@ -1,15 +1,14 @@
 import json
 from pathlib import Path
 from typing import List, Dict
+from config.settings import DATA
 
-
-DEFAULT_CONFIG_PATH = Path("config.json")
-
+JSON_PATH = Path(DATA) / "config.json"
 
 def create_config(
     selected_files: List[Dict],
     folder_name: str,
-    config_path: Path = DEFAULT_CONFIG_PATH,
+    config_path: Path = JSON_PATH,
 ) -> None:
 
     config_data = {
